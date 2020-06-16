@@ -10,7 +10,7 @@ def find_phrases():
     output = []
     files_count = 0
     regex = re.compile(r'seven day[s]? | 7-day[s]? | 7 day[s]? | free trial | trial key[s]? | 7 day[s]? try | '
-                       r'try experience | trial experience', re.M | re.IGNORECASE)
+                       r'try experience | trial experience | trial subscription', re.M | re.IGNORECASE)
 
     try:
         rootdir = sys.argv[1]
