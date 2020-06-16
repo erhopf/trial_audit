@@ -9,7 +9,7 @@ def find_phrases():
 
     output = []
     files_count = 0
-    regex = re.compile(r'seven day[s]? | 7-day[s]? | 7 day[s]? | free trial | trial key', re.M | re.IGNORECASE)
+    regex = re.compile(r'seven day[s]? | 7-day[s]? | 7 day[s]? | free trial | trial key[s]?', re.M | re.IGNORECASE)
 
     try:
         rootdir = sys.argv[1]
