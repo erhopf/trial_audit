@@ -1,0 +1,7 @@
+# Project exclude paths
+/venv/
+/output_files/
+/.idea/
+
+# Files to exclude
+.DS_Store

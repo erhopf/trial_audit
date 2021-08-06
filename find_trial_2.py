@@ -24,18 +24,18 @@ def find_phrases():
         os.mkdir('output_files')
 
     for folder, dirs, files in os.walk(rootdir):
+        files[:] = [file for file in files if file.endswith('.md')]
         for file in files:
-            if file.endswith('.md'):
-                fullpath = os.path.join(folder, file)
-                open_file = open(fullpath, 'r')
-                text = open_file.read()
-                matches = regex.findall(text)
-                match_count = len(matches)
+            fullpath = os.path.join(folder, file)
+            open_file = open(fullpath, 'r')
+            text = open_file.read()
+            matches = regex.findall(text)
+            match_count = len(matches)
 
-                if match_count != 0:
-                    files_count += 1
-                    output.append({'file': fullpath, 'match_count': match_count, 'matches': matches})
-                open_file.close()
+            if match_count != 0:
+                files_count += 1
+                output.append({'file': fullpath, 'match_count': match_count, 'matches': matches})
+            open_file.close()
 
     print(f"Matched files: {files_count}")
 
